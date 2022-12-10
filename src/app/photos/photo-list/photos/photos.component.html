@@ -1,0 +1,17 @@
+<p class="text-center text-muted" *ngIf="!photos.length">
+  Sorry, no photos
+</p>
+<ol class="list-unstyled">
+  <li *ngFor="let cols of rows" class="row">
+    <div class="col-4" *ngFor="let photo of cols">
+      <app-card [title]="photo.description">
+        <ap-photo [url]="photo.url" [description]="photo.description">
+        </ap-photo>
+        <div class="text-center">
+          <i class="fa fa-heart-o fa-1x me-2">{{ photo.likes }}</i>
+          <i class="fa fa-comment-o fa-1x me-2 ms-2">{{ photo.comments }}</i>
+        </div>
+      </app-card>
+    </div>
+  </li>
+</ol>

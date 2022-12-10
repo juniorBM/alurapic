@@ -1,0 +1,14 @@
+<div class="text-center mt-3 mb-3">
+  <form>
+    <i class="fa fa-search me-1"></i>
+    <input
+      (keyup)="filterPhoto($event)"
+      type="search"
+      class="rounded"
+      placeholder="buscar...."
+      autofocus>
+  </form>
+</div>
+{{ filter }}
+<app-photos [photos]="photos | filterByDescription: filter"></app-photos>
+<app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
